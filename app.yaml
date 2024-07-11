@@ -1,0 +1,35 @@
+runtime: nodejs18
+env: standard
+instance_class: F1
+handlers:
+  - url: /api/lookup-member
+    script: auto
+  - url: /api/lookup-member/.*
+    script: auto
+  - url: /api/members-state
+    script: auto
+  - url: /api/members-state/.*
+    script: auto
+  - url: /api/fetch-legislation
+    script: auto
+  - url: /api/fetch-legislation/.*
+    script: auto
+  - url: /
+    static_files: dist/index.html
+    upload: dist/index.html
+  - url: /blog
+    static_files: dist/blog/index.html
+    upload: dist/blog/index.html
+  - url: /(.*)
+    static_files: dist/\1
+    upload: dist/.*
+  - url: .*
+    script: auto
+  - url: .*
+    script: auto
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: automatic
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+service_account: metal-circle-424403-c9@appspot.gserviceaccount.com
