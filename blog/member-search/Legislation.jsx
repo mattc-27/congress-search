@@ -14,21 +14,23 @@ export default function LegislationCard({ item }) {
 
 
     return (
-        <div className='leg-card' key={item.number} >
-        <div className='leg-item'>
-            <div className='leg-title'>
-                {item.type === 'S' ?
-                    <h3>S {item.number}</h3>
-                    : <h3>HR {item.number}</h3>
-                }
-                <h3>Introduced {item.introducedDate}</h3>
-            </div>
-            <div className='leg-text'>
-                <p /* className='text-hourly' */>{item.title ? item.title : `Amendment number: ${item.amendmentNumber}`}</p>
-            </div>
 
-            {/*    <button onClick={() => handleClick(item)}>More info</button>*/}
+        <div className='leg-card' key={item.number} >
+            <div className='leg-item'>
+                <div className='leg-title'>
+                    {item.type !== null ?
+                        <h2> {item.type === 'S' ? `S ${item.number}` : `HR ${item.number}`}</h2>
+                        :
+                        null
+                    }
+                    <p>Introduced {item.introducedDate}</p>
+                </div>
+                <div className='leg-text'>
+                    <p /* className='text-hourly' */>{item.title ? item.title : `Amendment number: ${item.amendmentNumber}`}</p>
+                </div>
+                {/*    <button onClick={() => handleClick(item)}>More info</button>*/}
+            </div>
         </div>
-    </div>
+
     );
 }

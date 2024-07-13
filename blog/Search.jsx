@@ -74,19 +74,9 @@ export default function Search() {
     }, [locationSearch])
 
 
-    useEffect(() => {
-        console.log(locationSearch)
-    }, [locationSearch])
-
-    useEffect(() => {
-        console.log(memberArr)
-    }, [memberArr])
-
-
-
     return (
 
-        <>
+        <div className='member-search-container'>
             <div className='member-search'>
                 <Toaster containerStyle={{
                     position: 'absolute',
@@ -102,13 +92,19 @@ export default function Search() {
                     <h2>Or search by name</h2>
                     <MemberSearchInput setQuery={setQuery} />
                 </div>
-
-                {/* state members */}
-                {memberArr.length > 0 ?
-                    <StateMembers data={memberArr} />
-                    : null}
             </div>
-        </>
+            {/* state members */}
+            {memberArr.length > 0 ?
+                <div className='selected-state-results'>
+                    <div className='state-results-title'>
+                        <h2>
+                            Congressmembers: {memberArr[0].state}
+                        </h2>
+                    </div>
+                    <StateMembers data={memberArr} />
+                </div>
+                : null}
+        </div>
 
     );
 }

@@ -25,7 +25,7 @@ export default function Home() {
                     <div className='welcome-button'>
                         <button
                             className='btn-link'
-                            onClick={(e) => navigate('/search')}
+                            onClick={(e) => navigate('/blog')}
                         >
                             Search
                             {/*   <Link  to={'/search'}>Search</Link> */}

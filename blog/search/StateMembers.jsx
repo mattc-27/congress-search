@@ -12,9 +12,9 @@ export default function StateMembers({ data }) {
         const chamber =
             current.chamber === 'Senate' ? 'sen'
                 : 'rep'
-        console.log(member.terms.item[0])
 
         return (
+
             <div className='member-card-state'>
                 {/*   <p>{member.bioguideId}</p> 
             <p>{member.state}</p>*/}
@@ -26,25 +26,19 @@ export default function StateMembers({ data }) {
                     <p>{member.partyName}</p>
                 </div>
                 <div className='current-term-card'>
-                    <p>{current.chamber}, <em>{current.startYear} to Present</em></p>
+                    <p>{current.chamber}, <br /><em>{current.startYear} to Present</em></p>
                 </div>
             </div>
+
         );
     }
 
     return (
 
-        <div className='selected-state-results'>
-            <div className='state-results-title'>
-                <h2>
-                    Results
-                </h2>
-            </div>
-            <div className='selected-state-members'>
-                {data.map((item) => (
-                    <MemberCard member={item} />
-                ))}
-            </div>
+        <div className='selected-state-members'>
+            {data.map((item) => (
+                <MemberCard member={item} />
+            ))}
         </div>
 
     );
