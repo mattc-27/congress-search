@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { congressMembers } from '../../data/congress-members.js';
+import { CiSearch } from "react-icons/ci";
+
 import '../../style.css';
 
 export function MemberSearchInput({ setQuery }) {
@@ -50,28 +52,29 @@ export function MemberSearchInput({ setQuery }) {
     return (
 
         <div className='search-component'>
-            <>
-                <input
-                    type='text'
-                    value={inputValue}
-                    onChange={handleChange}
-                    placeholder='Enter congressmember name'
-                />
-            </>
-            {dropdownVisible && matches.length > 0 && (
-                <div className='search-results'>
-                    {matches.map(item => (
-                        <div
-                            key={item.Id}
-                            className="results"
-                            onClick={() => handleSelect(item)}
-                        >
-                            <p>  {item.full_name} ({item.state}) ({item.party})</p>
-                        </div>
-                    ))}
-                </div>
-            )}
+        <div className='search-component-input'>
+        <CiSearch size={30} color={'#485462'}/>
+            <input
+                type='text'
+                value={inputValue}
+                onChange={handleChange}
+                placeholder='Enter congressmember name'
+            />
         </div>
+        {dropdownVisible && matches.length > 0 && (
+            <div className='search-results'>
+                {matches.map(item => (
+                    <div
+                        key={item.Id}
+                        className="results"
+                        onClick={() => handleSelect(item)}
+                    >
+                        <p>  {item.full_name} ({item.state}) ({item.party})</p>
+                    </div>
+                ))}
+            </div>
+        )}
+    </div>
 
     );
 }

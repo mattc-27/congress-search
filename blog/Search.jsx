@@ -77,19 +77,24 @@ export default function Search() {
     return (
 
         <div className='member-search-container'>
+            <div className='member-search-title'>
+                <h2>Find your state's congressmembers</h2>
+            </div>
             <div className='member-search'>
+
                 <Toaster containerStyle={{
                     position: 'absolute',
                     zIndex: '999999999999999999',
                     top: '5%'
                 }} />
+
                 <div className='dropdown-container'>
-                    <h2>Find your state's congressmembers</h2>
+
                     <SelectStateDropdown setLocationSearch={setLocationSearch} />
                     {/*   <StateDropdown setLocationQuery={setLocationQuery} /> */}
                 </div>
                 <div className='search-container'>
-                    <h2>Or search by name</h2>
+                    {/* <h2>Or search by name</h2> */}
                     <MemberSearchInput setQuery={setQuery} />
                 </div>
             </div>
@@ -104,6 +109,8 @@ export default function Search() {
                     <StateMembers data={memberArr} />
                 </div>
                 : null}
+
+
         </div>
 
     );

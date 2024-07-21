@@ -20,6 +20,10 @@ global
     padding: 0;
 }
 
+input:focus {
+    outline: none;
+}
+
 
 
 /* --- --- --- --- ---
@@ -33,7 +37,7 @@ footer {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    background-color: #f9f9f9;
+    background-color: #d4d5da;
 }
 
 .footer-content {
@@ -81,7 +85,7 @@ header {
     width: 100%;
     margin: 0;
     max-width: 100%;
-    background-color: #f9f9f9;
+    background-color: #d4d5da;
 }
 
 .header-content {
@@ -168,6 +172,7 @@ layouts
     margin: 0;
     height: auto;
     background-color: #f9f9f9;
+    background-color: #d4d5da;
     box-shadow: 0px 0px 5px -1px rgba(82, 82, 82, 0.23);
 }
 
@@ -179,26 +184,30 @@ layouts
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     max-width: 100%;
     height: auto;
     margin: 0%;
     min-height: 100vh;
     margin-top: 5%;
+    background: transparent;
+    box-shadow: 5px 0px 1px 0px rgba(82, 82, 82, 0.23);
+    border-radius: 5px;
+    background: #2533311a;
 }
 
 .welcome-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 100%;
     max-width: 98%;
-    height: auto;
+    height: 100%;
     min-width: none;
     margin: 2.5% 0%;
-    color: #253331;
+    color: #1d1c28;
     font-family: 'Oxygen';
 }
 
@@ -208,7 +217,7 @@ layouts
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    max-width: 92%;
+    max-width: 70%;
     height: auto;
     margin: 1% 0%;
 }
@@ -219,7 +228,7 @@ layouts
     justify-content: center;
     align-items: flex-start;
     width: 100%;
-    max-width: 90%;
+    max-width: 50%;
     height: auto;
     margin: 1% 0%;
 }
@@ -260,17 +269,21 @@ layouts
 }
 
 .btn-link {
-    font-size: 1.5em;
+    font-size: 2em;
+    font-weight: 300;
     font-family: 'Source Sans 3';
     cursor: pointer;
-    height: auto;
-    width: 50%;
-    max-width: 100%;
+    height: 2em;
+    width: 100%;
+    max-width: 30%;
     margin: 0.5% 2.5%;
     padding: 1px;
     color: #253331;
-    background-color: #fff;
+    background-color: #f9f9f9;
     border: 1px solid #535355;
+    background-color: #1d1c28;
+    border: none;
+    color: #f9f9f9;
     border-radius: 5px;
 }
 
@@ -285,7 +298,7 @@ layouts
 .member-search-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     max-width: 98%;
@@ -293,16 +306,34 @@ layouts
     margin: 0%;
 }
 
-.member-search {
+.member-search-title {
+    font-family: 'Source Sans 3';
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    height: auto;
+    margin: 2.5%;
+}
+
+.member-search-title h2 {
+    align-self: center;
+    font-size: 2.5em;
+    font-weight: 500;
+}
+
+.member-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
     max-width: 98%;
+    min-height: 10vh;
+    height: auto;
     margin: 0%;
-    margin-top: 5%;
-    flex-grow: 1;
+    margin-top: 1%;
 }
 
 .dropdown-container h2 {
@@ -337,9 +368,9 @@ layouts
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 96%;
-    height: auto;
-    margin: 2.5% 0%;
+    flex-basis: 200%;
+    margin: 1% 0%;
+    height: 3em;
 }
 
 .dropdown-container {
@@ -348,9 +379,9 @@ layouts
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 98%;
-    height: auto;
-    margin: 2.5% 0%;
+    flex-basis: 200%;
+    height: 3em;
+    margin: 1% 0%;
 }
 
 /* ----------------
@@ -366,24 +397,6 @@ layouts
     width: 100%;
     max-width: 98%;
     height: auto;
-    margin: 2.5% 0%;
-}
-
-.dropdown-component select {
-    height: 3em;
-    color: #485462;
-    font-size: 1em;
-    flex-grow: 1;
-    max-width: 90%;
-    width: 100%;
-    margin: 1% 0.5%;
-    padding: 0.5% 0% 0.5% 1.5%;
-    border: 0.5px solid #8c8c8c;
-    background-color: transparent;
-}
-
-.dropdown-component select option {
-    font-size: 0.9em;
 }
 
 .search-component {
@@ -395,20 +408,51 @@ layouts
     width: 100%;
     max-width: 98%;
     height: auto;
-    margin: 2.5% 0%;
     position: relative;
+}
+
+.dropdown-component select {
+    height: 3em;
+    color: #485462;
+    font-size: 1em;
+    flex-grow: 1;
+    max-width: 98%;
+    width: 100%;
+    padding-left: 2%;
+    border: 0.25px solid #8c8c8c;
+    background-color: #f7f7f7;
+    font-family: 'Source Sans 3';
+}
+
+.dropdown-component select option {
+    font-size: 0.9em;
+    font-family: 'Source Sans 3';
+}
+
+.search-component-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    align-self: center;
+    width: 100%;
+    max-width: 98%;
+    border: 0.25px solid #8c8c8c;
+    background-color: #f7f7f7;
 }
 
 .search-component input {
     height: 3em;
     color: #485462;
-    font-size: 0.9em;
+    font-size: 1em;
     flex-grow: 1;
-    max-width: 90%;
+    max-width: 98%;
     width: 100%;
-    margin: 1% 0.5%;
-    padding: 0.5% 0% 0.5% 1.5%;
+    padding-left: 2%;
+    /*      flex-basis: 150%;
     border: 0.5px solid #8c8c8c;
+     padding: 0.5% 0% 0.5% 1.5%;*/
+    border: none;
     background-color: transparent;
 }
 
@@ -430,7 +474,7 @@ layouts
 
 .results {
     width: 100%;
-    font-size: 1.5em;
+
     color: #0A3161;
     font-weight: 400;
 }
@@ -440,6 +484,7 @@ layouts
     margin: 1.5% 1%;
     padding: 0.5%;
     line-height: 2;
+    font-size: 1em;
 }
 
 .results p:hover {
@@ -495,6 +540,7 @@ sponsored legislation */
     height: fit-content;
     margin: 1% 0%;
     box-shadow: 0px 0px 5px 1px rgba(82, 82, 82, 0.23);
+    background-color: #f9f9f9;
 }
 
 .leg-item {
@@ -561,6 +607,7 @@ sponsored legislation */
     margin: 0%;
     flex-grow: 1;
     margin-top: 10%;
+    background-color: #f9f9f9;
     border-top: 0.5px solid #53535339;
 }
 
@@ -574,12 +621,14 @@ sponsored legislation */
     height: auto;
     margin: 1%;
     margin: 5% 0%;
+
     font-family: 'Oxygen';
 }
 
 .state-results-title h2 {
-    font-size: 10vw;
+    font-size: 3vw;
     max-width: 99%;
+    color: #1d1c28;
 }
 
 .selected-state-members {
@@ -685,25 +734,24 @@ member info
 .member-page-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     width: 100%;
     max-width: 98%;
     min-height: 100vh;
     margin: 0%;
-    margin-top: 5%;
+    margin-top: 1%;
 }
 
 .member-info {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
-    max-width: 98%;
+    max-width: 100%;
     height: auto;
     margin: 0.5%;
-    margin-top: 2.5%;
 }
 
 .member-info h1 {
@@ -714,12 +762,12 @@ member info
     font-size: 1em;
     width: 20%;
     height: 2em;
-    border: 0.5px solid #252525;
-    background-color: transparent;
+    border: 0.5px solid #233c5a9d;
+    background-color: #f9f9f9;
     border-radius: 5px;
     cursor: pointer;
     align-self: flex-start;
-    margin: 0.5%;
+    color: #233c5ac4;
 }
 
 .back-button:hover {
@@ -735,7 +783,8 @@ member info
     max-width: 100%;
     height: auto;
     margin: 0.5%;
-    margin-top: 5%;
+    margin-top: 1%;
+    background-color: #f9f9f9;
 }
 
 .member-details h1 {
@@ -816,6 +865,7 @@ member info
     max-width: 100%;
     height: auto;
     line-height: 2;
+
 }
 
 .member-content p {
@@ -844,16 +894,16 @@ member info
 }
 
 .showTermsBtn {
-    height: auto;
-    font-size: 1.5em;
-    font-family: 'Source Sans 3';
-    padding: 1px;
-    width: 40%;
-    margin: 0.5%;
-    background-color: #fff;
-    border: 1px solid #535355;
+    font-size: 1em;
+    width: 20%;
+    height: 2em;
+    border: 0.5px solid #233c5a9d;
+    background-color: #f9f9f9;
     border-radius: 5px;
     cursor: pointer;
+    align-self: flex-start;
+    color: #233c5ac4;
+
 }
 
 .showTermsBtn:hover {
@@ -941,6 +991,17 @@ member info
     }
 
     /* */
+    .member-search {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 98%;
+        margin: 0%;
+        margin-top: 1%;
+    }
+
     .search-container,
     .dropdown-container {
         max-width: 80%;
@@ -968,7 +1029,7 @@ member info
     /* */
     .state-results-title h2 {
         max-width: 90%;
-        font-size: 5vw;
+        font-size: 3vw;
         font-weight: 300;
     }
 
@@ -1095,13 +1156,13 @@ member info
     }
 
     .state-results-title h2 {
-        font-size: 6vw;
+        font-size: 4vw;
         max-width: 99%;
         text-align: left;
         flex-grow: 1;
         width: 100%;
         max-width: 90%;
-        color: #233c5a;
+        color: #1d1c28;
     }
 
     .title-card {

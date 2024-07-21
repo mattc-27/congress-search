@@ -13,9 +13,11 @@ export default function MemberInfo({ data, sponsoredLeg }) {
         id
     } = useParams();
 
-    useEffect(() => {
-        console.log(chamber, id)
-    }, [])
+    /* 
+        useEffect(() => {
+            console.log(chamber, id)
+        }, [])*/
+
 
     const getCongressNo = (congress) => {
         return `${congress}${getCongressSuffix(congress)}`;
@@ -30,9 +32,10 @@ export default function MemberInfo({ data, sponsoredLeg }) {
     return (
 
         <div className='member-details'>
+            
             <div className='member-title'>
                 <div className='member-title-row-a'>
-                    <h2>{data.invertedOrderName}</h2>
+                    <h1>{data.invertedOrderName}</h1>
                 </div>
                 <div className='member-title-row-b'>
                     <p>{data.state}  {chamber === 'rep' ? `| ${data.district}` : null} </p>
@@ -42,8 +45,8 @@ export default function MemberInfo({ data, sponsoredLeg }) {
             <div className='member-content-main'>
                 <div className="member-content">
                     <p>
-                        <a className='member-link' href={data.officialWebsiteUrl}>{data.directOrderName}</a> is a dedicated member of  {chamber === 'rep' ? `the U.S. House of Representatives serving District ${data.district} in the state of ${data.state}`
-                            : `the U.S. Senate in the state of ${data.state}`}
+                        <a className='member-link' href={data.officialWebsiteUrl}>{data.directOrderName}</a> is a dedicated member of  {chamber === 'rep' ? `the U.S. House of Representatives serving District ${data.district} in the state of ${data.state}.`
+                            : `the U.S. Senate in the state of ${data.state}.`}
                     </p>
                 </div>
                 <div className="member-terms">
@@ -90,6 +93,7 @@ export default function MemberInfo({ data, sponsoredLeg }) {
 
             </div>
         </div>
+
 
     );
 }
