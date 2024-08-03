@@ -32,7 +32,7 @@ export default function MemberInfo({ data, sponsoredLeg }) {
     return (
 
         <div className='member-details'>
-            
+
             <div className='member-title'>
                 <div className='member-title-row-a'>
                     <h1>{data.invertedOrderName}</h1>

@@ -5,7 +5,18 @@ import { AppLayout } from './app-layout';
 import Search from './Search';
 import Member from './Member';
 import { NoMatch } from './no-match';
+
+import ReactGA from 'react-ga4';
+
 import '../style.css';
+
+// GA Tracking
+ReactGA.initialize([
+    {
+        trackingId: ''
+    }
+]);
+
 
 export default function MainApp() {
 

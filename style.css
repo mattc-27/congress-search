@@ -35,30 +35,29 @@ footer {
     width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
-    background-color: #d4d5da;
+    background-color: #f9f9f9;
 }
 
 .footer-content {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 99%;
     height: auto;
+    max-width: 98%;
     margin: 0%;
 }
 
 .icon-row {
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
     height: auto;
-    width: 100%;
-    max-width: 98%;
+    width: auto;
     margin: 1%;
     line-height: 2;
     height: auto;
@@ -69,10 +68,22 @@ footer {
     font-family: 'Source Sans 3';
     color: #252525;
     height: auto;
-    align-self: flex-start;
+    align-self: flex-end;
     width: 100%;
-    max-width: 90%;
-    margin: 0.5%;
+    flex-grow: 1;
+    margin-top: 5%;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footer-logo img {
+    height: 100px;
+    width: 100px;
 }
 
 .footerIcon {
@@ -85,7 +96,7 @@ header {
     width: 100%;
     margin: 0;
     max-width: 100%;
-    background-color: #d4d5da;
+    background-color: #f9f9f9;
 }
 
 .header-content {
@@ -94,57 +105,94 @@ header {
     justify-content: space-between;
     align-items: center;
     height: auto;
-
-    width: 100%;
-    max-width: 99%;
+    width: auto;
 }
 
 .header-title {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
     align-items: center;
     height: auto;
     width: 100%;
-    max-width: 98%;
-    margin: 1%;
+    flex-grow: 1;
     line-height: 2;
+}
+
+.header-title img {
+    height: 100px;
+    width: 100px;
 }
 
 .header-title h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: 400;
     height: auto;
     width: auto;
+    top: 1%;
+    width: 98%;
+    text-align: center;
     flex-grow: 1;
     color: #253331;
+    position: absolute;
     font-family: 'Source Sans 3';
 }
 
-header nav {
+.mobile-nav {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.mobile-nav button {
+    height: 5px;
+    height: 60px;
+    width: auto;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.mobile-nav button:hover {
+    box-shadow: 0px 0px 5px -1px rgba(82, 82, 82, 0.23);
+}
+
+.mobile-nav img {
+    height: 98%;
+}
+
+.mobile-nav-menu {
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     height: auto;
     width: 100%;
-    max-width: 98%;
+    max-width: 59%;
     margin: 1%;
     line-height: 2;
-    height: auto;
+    position: absolute;
+    top: 80%;
+    border: 0.5px solid #2525254d;
+    background-color: #fafafad6;
 }
 
-.link-nav {
+.mobile-link-nav {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     font-size: 1.5em;
+    font-weight: 500;
     font-family: 'Source Sans 3';
     width: auto;
     flex-grow: 1;
     color: #253331;
     text-align: left;
+    width: 99%;
+    margin: 1.5%;
+    margin-left: 2.5%;
     text-decoration: none;
 }
 
@@ -183,8 +231,8 @@ layouts
 .home-page-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -209,6 +257,7 @@ layouts
     margin: 2.5% 0%;
     color: #1d1c28;
     font-family: 'Oxygen';
+    background-color: #f9f9f99a;
 }
 
 .welcome-title {
@@ -217,7 +266,7 @@ layouts
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    max-width: 70%;
+    max-width: 80%;
     height: auto;
     margin: 1% 0%;
 }
@@ -226,11 +275,9 @@ layouts
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 50%;
+    align-items: center;
+    flex-grow: 1;
     height: auto;
-    margin: 1% 0%;
 }
 
 .welcome-button {
@@ -245,12 +292,11 @@ layouts
 }
 
 .welcome-title h1 {
-    font-size: 4em;
-    text-wrap: wrap;
+    font-size: 4.5em;
     text-align: left;
     flex-grow: 1;
     width: 100%;
-    max-width: 90%;
+    max-width: 99%;
     margin: 0.5%;
 }
 
@@ -260,9 +306,8 @@ layouts
     text-align: left;
     line-height: 3;
     flex-grow: 1;
-    max-width: 98%;
     width: 100%;
-    margin: 0.5%;
+    margin: 0.5% 1.5%;
     /*       
     align-self: center;
     min-width: none;*/
@@ -275,13 +320,13 @@ layouts
     cursor: pointer;
     height: 2em;
     width: 100%;
-    max-width: 30%;
+    max-width: 50%;
     margin: 0.5% 2.5%;
     padding: 1px;
     color: #253331;
     background-color: #f9f9f9;
     border: 1px solid #535355;
-    background-color: #1d1c28;
+    background-color: #86b9ff;
     border: none;
     color: #f9f9f9;
     border-radius: 5px;
@@ -938,9 +983,8 @@ member info
     max-width: 98%;
 }
 
-@media only screen and (min-width: 720px) {}
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 740px) {
     header {
         height: 150px;
         width: 100%;
@@ -959,6 +1003,75 @@ member info
         height: 100%;
     }
 
+    .header-title h1 {
+        font-size: 3em;
+        font-weight: 400;
+        height: auto;
+        width: auto;
+        top: 1%;
+        left: 5%;
+        width: 40%;
+        max-width: 100%;
+        text-align: left;
+        flex-grow: 1;
+        color: #253331;
+        position: absolute;
+        font-family: 'Source Sans 3';
+    }
+
+    .header-title img {
+        height: 150px;
+        width: 150px;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        height: auto;
+        width: 100%;
+        max-width: 35%;
+        margin: 1%;
+        line-height: 2;
+        height: auto;
+    }
+
+
+    .link-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1em;
+        font-weight: 400;
+        font-family: 'Source Sans 3';
+        width: auto;
+        flex-grow: 1;
+        color: #253331;
+        text-align: left;
+        text-decoration: none;
+    }
+
+    .link-nav:hover {
+        text-decoration: underline;
+        font-size: 1.75em;
+    }
+
+    #navIcon {
+        margin: 0.5% 5%;
+    }
+
+    .link-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 1.5em;
+        text-align: right;
+    }
+
+
     .home-page-container {
         display: flex;
         flex-direction: column;
@@ -969,25 +1082,65 @@ member info
         height: 100vh;
         max-height: 80%;
         margin: 0%;
+        background: transparent;
+        box-shadow: 5px 0px 1px 0px rgba(82, 82, 82, 0.23);
+        border-radius: 5px;
+        background: #2533311a;
     }
 
-    header nav {
-        flex-direction: row;
-        justify-content: flex-end;
-        height: auto;
-        flex-grow: 1;
-        max-width: 49%;
-        margin: 1%;
-        line-height: 2;
+
+    .welcome-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 80%;
+        height: 100%;
+        min-width: none;
+        margin: 2.5% 0%;
+        color: #1d1c28;
+        font-family: 'Oxygen';
+        background-color: #f9f9f99a;
     }
 
-    .link-nav {
+    .welcome-button {
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 39%;
+        height: auto;
+        flex-grow: 1;
+    }
+
+    .welcome-title {
+        max-width: 79%;
         align-items: center;
+        justify-content: center;
+    }
+
+    .welcome-title h1 {
+        font-size: 4.5em;
+        text-align: left;
+        align-self: center;
+        flex-grow: 1;
+        margin: 0.5%;
+        max-width: 90%;
+    }
+
+    .welcome-body p {
         font-size: 1.5em;
-        text-align: right;
+        font-weight: 400;
+        text-align: left;
+        line-height: 3;
+        flex-grow: 1;
+        max-width: 79%;
+        margin: 0.5% 1.5%;
+        /*       
+        align-self: center;
+        min-width: none;*/
     }
 
     /* */
