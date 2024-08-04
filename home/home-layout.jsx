@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 //import Header from '../Header';
@@ -14,8 +14,9 @@ import footerLogo from '../footerLogo.png';
 
 function HomeLayout() {
 
-    const [mobile, setMobile] = useState(null);
+    const [mobile, setMobile] = useState(true);
     const [showNav, setShowNav] = useState(null);
+
 
     function updateNav() {
         if (window.innerWidth < 740) {
@@ -51,7 +52,7 @@ function HomeLayout() {
                             {showNav ?
                                 <nav className='mobile-nav-menu'>
                                     <Link className='mobile-link-nav' to={'/'}>Home</Link>
-                                    <a className='mobile-link-nav' href='/blog'>Search</a>
+                                    <a className='mobile-link-nav' href='/search'>Search</a>
                                 </nav>
                                 : null}
                         </div>
@@ -94,7 +95,6 @@ function HomeLayout() {
                 </div>
             </footer>
         </div>
-
     );
 }
 

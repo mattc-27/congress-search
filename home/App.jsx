@@ -17,12 +17,20 @@ ReactGA.initialize([
 
 
 
+
 export default function HomeApp() {
-  
+
+    function HomePage() {
+
+        return (
+            <Home />
+        );
+    }
+
     return (
         <Routes>
             <Route path="/" element={<HomeLayout />}>
-                <Route index element={<Home />} />
+                <Route index element={<HomePage />} />
                 <Route path="*" element={<NoMatch />} />
             </Route>
         </Routes>

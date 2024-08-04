@@ -21,12 +21,12 @@ ReactGA.initialize([
 export default function MainApp() {
 
 
-  function Blog() {
-  
-          return (
-              <Search />
-          );
-      }
+    function SearchPage() {
+
+        return (
+            <Search />
+        );
+    }
 
 
     return (
@@ -38,7 +38,7 @@ export default function MainApp() {
           continue to work.
            <Route path="/member-search" element={<MemberSearch />} /> */}
             <Route path="/" element={<AppLayout />}>
-                <Route index element={<Blog />} />
+                <Route index element={<SearchPage />} />
                 <Route path="/search/:chamber/:id" element={<Member />} />
                 <Route path="*" element={<NoMatch />} />
             </Route>

@@ -252,8 +252,8 @@ layouts
     align-items: flex-start;
     width: 100%;
     max-width: 98%;
-    height: 100%;
-    min-width: none;
+    height: auto;
+    flex-grow: 1;
     margin: 2.5% 0%;
     color: #1d1c28;
     font-family: 'Oxygen';
