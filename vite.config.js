@@ -13,7 +13,7 @@ export default defineConfig({
       // Build two separate bundles, one for each app.
       input: {
         main: path.resolve(__dirname, "index.html"),
-        blog: path.resolve(__dirname, "blog/index.html"),
+        search: path.resolve(__dirname, "search/index.html"),
       },
     },
   },

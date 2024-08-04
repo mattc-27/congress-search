@@ -17,12 +17,14 @@ handlers:
   - url: /
     static_files: dist/index.html
     upload: dist/index.html
-  - url: /blog
-    static_files: dist/blog/index.html
-    upload: dist/blog/index.html
+  - url: /search
+    static_files: dist/search/index.html
+    upload: dist/search/index.html
   - url: /(.*)
     static_files: dist/\1
     upload: dist/.*
+  - url: .*
+    script: auto
   - url: .*
     script: auto
   - url: .*

@@ -3,7 +3,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 //import Header from '../Header';
 
-// stylesheet
+// stylesheets
 import '../style.css';
 
 // icons
@@ -11,12 +11,10 @@ import logoA from '../logoA.png';
 import mdMenu from '../mdMenu.png';
 import footerLogo from '../footerLogo.png';
 
-
-function HomeLayout() {
+function AppLayout() {
 
     const [mobile, setMobile] = useState(true);
     const [showNav, setShowNav] = useState(null);
-
 
     function updateNav() {
         if (window.innerWidth < 740) {
@@ -51,8 +49,8 @@ function HomeLayout() {
                             </button>
                             {showNav ?
                                 <nav className='mobile-nav-menu'>
-                                    <Link className='mobile-link-nav' to={'/'}>Home</Link>
-                                    <a className='mobile-link-nav' href='/search'>Search</a>
+                                    <a className='mobile-link-nav' href='/'>Home</a>
+                                    <Link className='mobile-link-nav' to={'/'}>Search</Link>
                                 </nav>
                                 : null}
                         </div>
@@ -64,12 +62,12 @@ function HomeLayout() {
                             <h1>Legislation Lemur</h1>
                         </div>
                         <nav>
-                            <Link className='link-nav' to={'/'}>
+                            <a className='link-nav' href='/'>
                                 Home
-                            </Link>
-                            <a className='link-nav' href='/search'>
-                                Search
                             </a>
+                            <Link className='link-nav' href='/'>
+                                Search
+                            </Link>
                         </nav>
                     </div>
                 }
@@ -98,4 +96,4 @@ function HomeLayout() {
     );
 }
 
-export { HomeLayout };
+export { AppLayout };

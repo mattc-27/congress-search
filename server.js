@@ -92,7 +92,7 @@ app.get("/api/other_test", async (req, res) => {
 // Route for serving HTML files
 app.use("*", async (req, res) => {
   let url = req.originalUrl;
-  let appDirectory = url.startsWith("/blog") ? "blog" : "";
+  let appDirectory = url.startsWith("/search") ? "search" : "";
   let htmlFileToLoad = path.join("dist", appDirectory, "index.html");
 
   try {

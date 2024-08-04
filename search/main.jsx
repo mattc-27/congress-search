@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
         {/* "Mount" this app under the /inbox URL pathname. All routes and links
         are relative to this name. */}
-        <BrowserRouter basename="blog">
+        <BrowserRouter basename="search">
             <MainApp />
         </BrowserRouter>
     </React.StrictMode>
