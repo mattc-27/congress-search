@@ -1,42 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation } from "react-router-dom";
 // icons
-import logoA from '../logoA.png';
-import mdMenu from '../mdMenu.png';
+import newLogo from '../newLogo.png';
 
 function Header() {
 
     return (
         <header>
             {mobile ?
-                <div className='header-content'>
-                    <div className='header-title'>
-                        <img src={logoA} />
-                        <h1>Legislation Lemur</h1>
+                <div className='header__content'>
+                    <div className='header_title'>
+                        <img src={newLogo} />
+                        <h2>Legislation Lemur</h2>
                     </div>
-                    <div className='mobile-nav'>
-                        <button id="showNav" onClick={showMobileNav}>
-                            <img src={mdMenu} />
-                        </button>
-                        {showNav ?
-                            <nav className='mobile-nav-menu'>
-                                <Link className='mobile-link-nav' to={'/'}>Home</Link>
-                                <a className='mobile-link-nav' href='/search'>Search</a>
-                            </nav>
-                            : null}
-                    </div>
-                </div>
-                :
-                <div className='header-content'>
-                    <div className='header-title'>
-                        <img src={logoA} />
-                        <h1>Legislation Lemur</h1>
-                    </div>
-                    <nav>
-                        <Link className='link-nav' to={'/'}>
+                    <nav className='header_nav'>
+                        <Link className='nav_link' to={'/'}>
                             Home
                         </Link>
-                        <a className='link-nav' href='/search'>
+                        <a className='nav_link' href='/search'>
+                            Search
+                        </a>
+                    </nav>
+                </div>
+                :
+                <div className='header__content'>
+                    <div className='header_title'>
+                        <img src={newLogo} />
+                        <h2>Legislation Lemur</h2>
+                        {/*   <h1>Legislation Lemur</h1>
+                  */}
+                    </div>
+                    <nav className='header_nav'>
+                        <Link className='nav_link' to={'/'}>
+                            Home
+                        </Link>
+                        <a className='nav_link' href='/search'>
                             Search
                         </a>
                     </nav>

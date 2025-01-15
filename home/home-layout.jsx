@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
-//import Header from '../Header';
 
 // stylesheet
-import '../style.css';
+import './main.css';
 
 // icons
-import logoA from '../logoA.png';
-import mdMenu from '../mdMenu.png';
-import footerLogo from '../footerLogo.png';
+import newLogo from '../newLogo.png';
 
 
 function HomeLayout() {
@@ -40,34 +37,29 @@ function HomeLayout() {
         <div>
             <header>
                 {mobile ?
-                    <div className='header-content'>
-                        <div className='header-title'>
-                            <img src={logoA} />
-                            <h1>Legislation Lemur</h1>
+                    <div className='header__content'>
+                        <div className='header_title'>
+                            <img src={newLogo} />
+                            <h2>Legislation Lemur</h2>
                         </div>
-                        <div className='mobile-nav'>
-                            <button id="showNav" onClick={showMobileNav}>
-                                <img src={mdMenu} />
-                            </button>
-                            {showNav ?
-                                <nav className='mobile-nav-menu'>
-                                    <Link className='mobile-link-nav' to={'/'}>Home</Link>
-                                    <a className='mobile-link-nav' href='/search'>Search</a>
-                                </nav>
-                                : null}
-                        </div>
+                        <nav className='header_nav'>
+                            <Link className='nav_link' to={'/'}>Home</Link>
+                            <a className='nav_link' href='/search'>Search</a>
+                        </nav>
                     </div>
                     :
-                    <div className='header-content'>
-                        <div className='header-title'>
-                            <img src={logoA} />
-                            <h1>Legislation Lemur</h1>
+                    <div className='header__content'>
+                        <div className='header_title'>
+                            <img src={newLogo} />
+                            <h2>Legislation Lemur</h2>
+                            {/*   <h1>Legislation Lemur</h1>
+                          */}
                         </div>
-                        <nav>
-                            <Link className='link-nav' to={'/'}>
+                        <nav className='header_nav'>
+                            <Link className='nav_link' to={'/'}>
                                 Home
                             </Link>
-                            <a className='link-nav' href='/search'>
+                            <a className='nav_link' href='/search'>
                                 Search
                             </a>
                         </nav>
@@ -79,18 +71,17 @@ function HomeLayout() {
             </div>
             <footer>
                 <div className='footer-content'>
-                    <div className='footer-logo'>
-                        <img src={footerLogo} />
-                    </div>
+                    <h2>Legislation Lemur</h2>
                     <div className='icon-row'>
-                        <FaGithub size={35} color={'#252525'} className='footerIcon'>
-                            <a href="https://github.com/LibraryOfCongress/api.congress.gov/" />
-                        </FaGithub>
+
                         <a href="https://api.congress.gov/">
                             <p>
                                 Data obtained from the Congress.gov API
                             </p>
                         </a>
+                        <FaGithub size={25} color={'#fff'} className='footerIcon'>
+                            <a href="https://github.com/LibraryOfCongress/api.congress.gov/" />
+                        </FaGithub>
                     </div>
                 </div>
             </footer>
